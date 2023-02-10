@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador CV</title>
+    <link rel="stylesheet" href="assets/css/lib/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/site/site.css" />
+</head>
+<body>
+    <header></header>
+    <main class="container-fluid"> 
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 offset-md-4">
+              <div class="card">
+                <div class="card-header bg-primary text-light text-center">
+                  <h5>Generador CV</h5>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center">
+                    All information is required
+                  </h5>
+    
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="address" class="form-label">Address:</label>
+                    <input type="text" class="form-control" id="address" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">Phone:</label>
+                    <input type="text" class="form-control" id="phone" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="webSite" class="form-label">WebSite:</label>
+                    <input type="text" class="form-control" id="webSite" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="summary" class="form-label">Summary:</label>
+                    <input type="text" class="form-control" id="summary" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="lenguajes" class="form-label">Lenguajes:</label>
+                    <input type="text" class="form-control" id="lenguajes" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="jobs" class="form-label">Jobs:</label>
+                    <input type="text" class="form-control" id="jobs" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="education" class="form-label">Education:</label>
+                    <input type="text" class="form-control" id="education" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="skill" class="form-label">Skill:</label>
+                    <input type="text" class="form-control" id="skill" />
+                  </div>
+                  <!-- <div class="mb-3">
+                    <label for="contact-type" class="form-label"
+                      >Contact type:</label
+                    >
+                    <select class="form-select" id="contact-type">
+                      <option value="">Select some option</option>
+                      <option value="Academy">Academy</option>
+                      <option value="Office">Office</option>
+                      <option value="Casual">Casual</option>
+                    </select>
+                  </div> -->
+                  <div>
+                    <button
+                      onclick="createContact()"
+                      type="button"
+                      class="btn btn-outline-primary float-end"
+                    >
+                      Generate CV
+                    </button>
+                    <button
+                      onclick="formClear()"
+                      type="button"
+                      class="btn btn-outline-warning float-end me-2"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4" id="contact-container">
+          </div>
+</main>
+    <footer></footer>
+    <script src="assets/js/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/js/site/index/index.js"></script>
+</body>
+</html>
