@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador CV</title>
+    <title>Generate CV</title>
+    <link rel="icon" href="assets/images/icon.png" type="image/gif">
     <link rel="stylesheet" href="assets/css/lib/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/site/site.css" />
 </head>
 <body>
     <header></header>
-    <main class="container-fluid"> 
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-4 offset-md-4">
+    <main class="container-fluid "> 
+        <div class="row mt-3">
+            <div class="col-12 col-sm-12 col-md-4 offset-md-4 ">
               <div class="card">
                 <div class="card-header bg-primary text-light text-center">
-                  <h5>Generador CV</h5>
+                  <h5>Generate CV</h5>
                 </div>
                 <div class="card-body">
                   <h5 class="card-title text-center">
@@ -36,7 +37,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="phone" class="form-label">Phone:</label>
-                    <input type="text" class="form-control" id="phone" />
+                    <input type="tel" pattern="[0-9]{10}" class="form-control" id="phone" />
                   </div>
                   <div class="mb-3">
                     <label for="webSite" class="form-label">WebSite:</label>
@@ -44,7 +45,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="summary" class="form-label">Summary:</label>
-                    <input type="text" class="form-control" id="summary" />
+                    <textarea type="text" class="form-control" id="summary" ></textarea>
                   </div>
                   <div class="mb-3">
                     <label for="lenguajes" class="form-label">Lenguajes:</label>
@@ -73,18 +74,20 @@
                       <option value="Casual">Casual</option>
                     </select>
                   </div> -->
-                  <div>
+                  <div class="d-flex justify-content-center mb-2">
                     <button
-                      onclick="createContact()"
+                    id="btngenerate"
                       type="button"
-                      class="btn btn-outline-primary float-end"
+                      class="btn btn-outline-primary btn-lg"
                     >
                       Generate CV
                     </button>
+                  </div>
+                  <div class="d-flex justify-content-center">
                     <button
-                      onclick="formClear()"
+                    id="btnclear"
                       type="button"
-                      class="btn btn-outline-warning float-end me-2"
+                      class="btn btn-outline-warning btn-lg me-2"
                     >
                       Clear
                     </button>
@@ -98,6 +101,7 @@
 </main>
     <footer></footer>
     <script src="assets/js/lib/bootstrap/bootstrap.min.js"></script>
-    <script src="assets/js/site/index/index.js"></script>
+    <script type="module" src="assets/js/site/index/index.js" ></script>
+    <!-- <script type="module" src="assets/js/site/index/cardCv.js"></script> -->
 </body>
 </html>

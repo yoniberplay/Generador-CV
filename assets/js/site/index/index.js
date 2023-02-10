@@ -1,3 +1,5 @@
+import  cardCv  from "./cardCv.js";
+
 const inputName = document.getElementById("name");
 const inputPhone = document.getElementById("phone");
 const inputAddress = document.getElementById("address");
@@ -9,22 +11,15 @@ const inputJobs = document.getElementById("jobs");
 const inputEducation = document.getElementById("education");
 const inputSkill = document.getElementById("skill");
 
-// const selectContactType = document.getElementById("contact-type");
 
-function formClear() {
-  inputClear(inputName, true);
-  inputClear(inputPhone, false);
-  inputClear(inputAddress, false);
-  inputClear(inputEmail, false);
-  inputClear(inputWebSite, false);
-  inputClear(inputSummary, false);
-  inputClear(inputLenguajes, false);
-  inputClear(inputJobs, false);
-  inputClear(inputEducation, false);
-  inputClear(inputSkill, false);
-  // inputClear(selectContactType, false);
-}
+const btngenerate = document.getElementById("btngenerate");
+btngenerate.addEventListener("click", createContact);
+
+const btnclear = document.getElementById("btnclear");
+btnclear.addEventListener("click", formClear);
+
 function createContact() {
+  cardCv();
   if (!validate()) {
     alert("All information is required");
   } else {
@@ -38,71 +33,28 @@ function createContact() {
     const valueJobs = inputJobs.value;
     const valueEducation = inputEducation.value;
     const valueSkill = inputSkill.value;
-    // const valueContactType = selectContactType.value;
-    const mainContainer = document.getElementById("contact-container");
 
-    const divCol4 = document.createElement("div"); //0x1
-    divCol4.setAttribute("class", "col-12 col-sm-12 col-md-4 mt-2");
-
-    const divCard = document.createElement("div");
-    divCard.setAttribute("class", "card");
-
-    const divCardHeader = document.createElement("div");
-    divCardHeader.setAttribute(
-      "class",
-      "card-header bg-dark text-light text-center"
-    );
-
-    const h5CardHeader = document.createElement("h5");
-    h5CardHeader.setAttribute("class", "text-center fw-bold");
-    h5CardHeader.innerText = `Contact - ${valueContactType}`; //string interpolation
-
-    const divCardBody = document.createElement("div");
-    divCardBody.setAttribute("class", "card-body");
-
-    const ulCardBody = document.createElement("ul");
-    ulCardBody.setAttribute("class", "list-group list-group-flush");
-
-    const liName = document.createElement("li");
-    liName.setAttribute("class", "list-group-item");
-    liName.innerText = `Name - ${valueName}`;
-
-    const liPhone = document.createElement("li");
-    liPhone.setAttribute("class", "list-group-item");
-    liPhone.innerText = `Phone - ${valuePhone}`;
-
-    const btnDelete = document.createElement("button");
-    btnDelete.setAttribute("class", "btn btn-outline-danger mt-2 float-end");
-    btnDelete.innerText = "Delete";
-    btnDelete.type = "button";
-    btnDelete.addEventListener("click", function () {
-      if (confirm("Are you sure want to delete this contact?")) {
-        mainContainer.removeChild(divCol4); //0x1
-      }
-    });
-
-    divCardHeader.appendChild(h5CardHeader);
-
-    divCardBody.appendChild(ulCardBody);
-    divCardBody.appendChild(btnDelete);
-
-    ulCardBody.appendChild(liName);
-    ulCardBody.appendChild(liPhone);
-
-    divCard.appendChild(divCardHeader);
-    divCard.appendChild(divCardBody);
-
-    divCol4.appendChild(divCard);
-
-    mainContainer.appendChild(divCol4);
+    cardCv(valueName,valuePhone,valueAddress,valueEmail,valueWebSite,valueSummary,valueLenguajes,valueJobs,valueEducation,valueSkill);
     formClear();
   }
+}
+
+function formClear() {
+  inputClear(inputName, true);
+  inputClear(inputPhone, false);
+  inputClear(inputAddress, false);
+  inputClear(inputEmail, false);
+  inputClear(inputWebSite, false);
+  inputClear(inputSummary, false);
+  inputClear(inputLenguajes, false);
+  inputClear(inputJobs, false);
+  inputClear(inputEducation, false);
+  inputClear(inputSkill, false);
 }
 
 function validate() {
   const valueName = inputName.value;
   const valuePhone = inputPhone.value;
-  // const valueContactType = selectContactType.value;
   const valueAddress = inputAddress.value;
   const valueEmail = inputEmail.value;
   const valueWebSite = inputWebSite.value;
@@ -124,7 +76,6 @@ function validate() {
   isValid = inputValidator(inputJobs, valueJobs, isValid);
   isValid = inputValidator(inputEducation, valueEducation, isValid);
   isValid = inputValidator(inputSkill, valueSkill, isValid);
-  // isValid = inputValidator(selectContactType, valueContactType, isValid);
 
   return isValid;
 }
