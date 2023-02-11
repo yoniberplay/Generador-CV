@@ -49,7 +49,11 @@ function createContact() {
     );
     formClear();
   }
+
 }
+
+
+
 
 function formClear() {
   inputClear(inputName, true);
@@ -119,3 +123,19 @@ function inputClear(input, isFocus) {
     input.focus();
   }
 }
+
+//!---------------
+// cardCv(
+//   'Yoniber Alberto',
+//   '8299884791',
+//   'El faro #19 la piscina',
+//   'yoniber.encarnacion@gmail.com',
+//   'yoniber.com',
+//   'ozuna el negrito ojos claros bebe',
+//   'alemnan, ruso, english',
+//   'Programador 2022, recoger basura 2021 , power ranger 2023',
+//   'ITLA, UTESA',
+//   'DURO, ONION, SOLID, POWER, MOTO,PASOLA',
+//   'SCRUM, AGILE, SOLID, ONION'
+// );
+//!---------------
