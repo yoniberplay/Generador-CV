@@ -1,4 +1,4 @@
-import  cardCv  from "./cardCv.js";
+import cardCv from "./cardCv.js";
 
 const inputName = document.getElementById("name");
 const inputPhone = document.getElementById("phone");
@@ -10,7 +10,7 @@ const inputLenguajes = document.getElementById("lenguajes");
 const inputJobs = document.getElementById("jobs");
 const inputEducation = document.getElementById("education");
 const inputSkill = document.getElementById("skill");
-
+const inputCertification = document.getElementById("certification");
 
 const btngenerate = document.getElementById("btngenerate");
 btngenerate.addEventListener("click", createContact);
@@ -19,7 +19,6 @@ const btnclear = document.getElementById("btnclear");
 btnclear.addEventListener("click", formClear);
 
 function createContact() {
-  cardCv();
   if (!validate()) {
     alert("All information is required");
   } else {
@@ -33,8 +32,21 @@ function createContact() {
     const valueJobs = inputJobs.value;
     const valueEducation = inputEducation.value;
     const valueSkill = inputSkill.value;
+    const valueCertification = inputCertification.value;
 
-    cardCv(valueName,valuePhone,valueAddress,valueEmail,valueWebSite,valueSummary,valueLenguajes,valueJobs,valueEducation,valueSkill);
+    cardCv(
+      valueName,
+      valuePhone,
+      valueAddress,
+      valueEmail,
+      valueWebSite,
+      valueSummary,
+      valueLenguajes,
+      valueJobs,
+      valueEducation,
+      valueSkill,
+      valueCertification
+    );
     formClear();
   }
 }
@@ -49,6 +61,7 @@ function formClear() {
   inputClear(inputLenguajes, false);
   inputClear(inputJobs, false);
   inputClear(inputEducation, false);
+  inputClear(inputCertification, false);
   inputClear(inputSkill, false);
 }
 
@@ -63,6 +76,7 @@ function validate() {
   const valueJobs = inputJobs.value;
   const valueEducation = inputEducation.value;
   const valueSkill = inputSkill.value;
+  const valueCertification = inputCertification.value;
 
   let isValid = true;
 
@@ -76,6 +90,7 @@ function validate() {
   isValid = inputValidator(inputJobs, valueJobs, isValid);
   isValid = inputValidator(inputEducation, valueEducation, isValid);
   isValid = inputValidator(inputSkill, valueSkill, isValid);
+  isValid = inputValidator(inputCertification, valueCertification, isValid);
 
   return isValid;
 }
